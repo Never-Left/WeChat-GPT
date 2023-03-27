@@ -1,12 +1,20 @@
 package com.gpt.wx.domain;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import java.util.Objects;
 
 /**
  * @author: dong.zhang
  * @date: 2023-03-25 10:28
  */
-
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
 public class ResultVo<T> {
     private static final int SUCCESS_STATUS = 1;
     private static final String SUCCESS_MESSAGE = "success";
@@ -58,38 +66,4 @@ public class ResultVo<T> {
         return new ResultVo(9999, "system server error");
     }
 
-    public Integer getCode() {
-        return this.code;
-    }
-
-    public void setCode(Integer code) {
-        this.code = code;
-    }
-
-    public String getMsg() {
-        return this.msg;
-    }
-
-    public void setMsg(String msg) {
-        this.msg = msg;
-    }
-
-    public T getData() {
-        return this.data;
-    }
-
-    public void setData(T data) {
-        this.data = data;
-    }
-
-    public Object getExtra() {
-        return this.extra;
-    }
-
-    public void setExtra(Object extra) {
-        this.extra = extra;
-    }
-
-    public ResultVo() {
-    }
 }
